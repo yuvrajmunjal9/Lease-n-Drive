@@ -1,0 +1,66 @@
+<template>
+  <c-toast-message></c-toast-message>
+    <template if:true={spinner}>
+        <c-loading></c-loading>
+      </template>
+    <template if:true={isrenter}>
+    <lightning-card title="Vehicle Rental Search" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <div class="search-container">
+                <lightning-input type="date" label="From Date" name="fromDate" onchange={handleChange} required></lightning-input>
+                <lightning-input type="date" label="To Date" name="toDate" onchange={handleChange} required></lightning-input>
+                <lightning-input type="text" label="Location" name="location" onchange={handleChange} required></lightning-input>
+                <lightning-button label="Search" variant="brand" onclick={handleSearch}></lightning-button>
+            </div>
+            <div class="vehicle" if:true={vehicles}>
+                <template for:each={vehicles} for:item="vehicle" >
+                  <div key={vehicle.number__c} class="card">
+                    <div class="vehicle-details">
+                      <p><b><strong>Vehicle Number:</strong> {vehicle.number__c}</b></p>
+                      <p><b><strong>Type:</strong> {vehicle.type__c}</b></p>
+                      <p><strong>Model:</strong>{vehicle.model__c}</p>
+                      <p><strong>colour:</strong>{vehicle.color__c}</p>
+                      <p><strong>Address:</strong> {vehicle.address__c}</p>
+                      <p><strong>Price(per day):</strong> {vehicle.price__c}</p>
+                    </div>
+                    <lightning-button label="Book" name={vehicle.Id} class="button" variant="Success" onclick={openModel}></lightning-button>
+                  </div>
+                </template>
+              </div>
+        </div>
+    </lightning-card>
+    </template>
+        <!-- ----------Leaser--------- -->
+    <template if:false={isrenter}>
+        <br>
+        <div class="container">
+        <lightning-button label="Add Vehicle" class="button" variant="brand" onclick={addVehicle}></lightning-button>
+        <div class="vehicle" if:true={vehicles}>
+            <template for:each={vehicles} for:item="vehicle" >
+              <div key={vehicle.number__c} class="card">
+                <div class="vehicle-status">
+                  <input type="checkbox" name={vehicle.number__c} class="vehicle-checkbox" checked={vehicle.isChecked__c} 
+                  disabled={vehicle.isDisabled__c} onclick={changeStatus}/>
+                  <label>{vehicle.status__c}</label>
+              </div>
+          
+                <div class="vehicle-details">
+                  <p><b><strong>Vehicle Number:</strong> {vehicle.number__c}</b></p>
+                  <p><b><strong>Type:</strong> {vehicle.type__c}</b></p>
+                  <p><strong>Model:</strong>{vehicle.model__c}</p>
+                  <p><strong>colour:</strong>{vehicle.color__c}</p>
+                  <p><strong>Address:</strong> {vehicle.address__c}</p>
+                  <p><strong>Price(per day):</strong> {vehicle.price__c}</p>
+                </div>
+              </div>
+            </template>
+          </div>
+    </div>
+    </template>
+<template if:true={isModelOpen}>
+    <c-model title={title} message={message} onsave={handleBooking} oncancel={closeModel}></c-model>
+  </template>
+  <template if:true={isAddVehicle}>
+    <c-add-vehicle onsave={saveVehicle} oncancel={cancelVehicle}></c-add-vehicle>
+  </template>
+</template>

@@ -1,0 +1,30 @@
+<template>
+  <c-toast-message></c-toast-message>
+  <template if:true={spinner}>
+    <c-loading></c-loading>
+  </template>
+  <template for:each={vehicles} for:item="vehicle" >
+      <div key={vehicle.number__c} class="card">
+    <div class="vehicle-card"> 
+        <div class="Heading">Vehicle Request Approval</div>
+        <div class="vehicle-details">
+            <div class="vehicle" if:true={vehicles}>
+                    <div class="vehicle-details">
+                      <p><b><strong>Vehicle Number:</strong> {vehicle.number__c}</b></p>
+                      <p><b><strong>Type:</strong> {vehicle.type__c}</b></p>
+                      <p><strong>Model:</strong>{vehicle.model__c}</p>
+                      <p><strong>colour:</strong>{vehicle.color__c}</p>
+                      <p><strong>Address:</strong> {vehicle.address__c}</p>
+                      <p><strong>Price(per day):</strong> {vehicle.price__c}</p>
+                    </div>
+                  
+              </div>
+            </div>
+        <div class="button-group">
+            <button  name="Approve" class="approve-button" data-id={vehicle.number__c} onclick={handleClick}>Approve</button>
+            <button name="Reject" class="reject-button" data-id={vehicle.number__c} onclick={handleClick}>Reject</button>
+        </div>
+    </div>
+  </div>
+</template>
+</template>

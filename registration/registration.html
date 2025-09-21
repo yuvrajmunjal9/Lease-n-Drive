@@ -1,0 +1,24 @@
+<template>
+   
+    <c-toast-message></c-toast-message>
+
+        <div class="container">
+            <div class="body" style={bgImageStyle}></div>
+            <div class="right">
+        <div class="registration-form" >
+        <h2 class="title">Register</h2>
+        <lightning-input  type="email" name="Email__c" placeholder="Email" value={email} onchange={handleInputChange} ></lightning-input>
+        <lightning-input type="text" name="Name" placeholder="Name" value={name} onchange={handleInputChange} ></lightning-input>
+        <lightning-input type="date" name="DOB__c" placeholder="Date of Birth" value={dob} onchange={handleInputChange}></lightning-input>
+        <lightning-input type="phone" name="Phone__c" placeholder="phone" value={phone} onchange={handleInputChange}></lightning-input>
+        <lightning-input type="text" name="DL__c" placeholder="Driver's License" value={dl} onchange={handleInputChange} ></lightning-input>
+        <lightning-combobox  name="RecordTypeId"  value={role} placeholder="Select Role"
+                            options={roleOptions} onchange={handleInputChange}></lightning-combobox>
+        <button  onclick={handleRegister} class="register-button">Sign Up</button>
+        <br>
+        <span>Already have an Account? <a href="#" onclick={handleLogin}>Sign In</a></span>
+
+    </div>
+</div>
+</div>
+</template>

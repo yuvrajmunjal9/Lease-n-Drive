@@ -1,0 +1,34 @@
+<template>
+    <lightning-card>
+        <div class="container" style={bgImageStyle}>
+        <!-- <div class="slds-p-around_medium" style={bgImageStyle}> -->
+                    <div class="leftMain">
+                        <img  src={profileimg} class="rounded-circle" width="120">
+                              <h1>{customer.Name}</h1>
+                          </div>      
+                
+                <div class="rightMain">
+                    <h1 class="a1">About</h1>
+                            <h2 class="a2">Full Name:
+                            {customer.Name}</h2>
+                    <hr>
+                            <h2 class="a3">Email:
+                            <a>{customer.Email__c}</a></h2>
+                 <hr>
+                        <h2 class="a4">Phone:
+                            {customer.Phone__c}</h2>
+                <hr>    
+                            <h2 class="a5">Dl-No:
+                            {customer.DL__c}</h2>
+                <hr>            
+                            <h2 class="a6">DOB:
+                            {customer.DOB__c}</h2>
+                <hr>           
+                            <h2 class="a7">Role:
+                            {customer.Role__c}</h2>
+                <hr>            
+                </div>
+           
+            </div>
+    </lightning-card>
+</template>

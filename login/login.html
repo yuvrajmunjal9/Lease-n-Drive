@@ -1,0 +1,49 @@
+<template>
+    <c-toast-message></c-toast-message>
+    
+    <template if:true={spinner}>
+         <c-loading></c-loading>
+    </template>
+    <div class="screen brown-screen"  onclick={handleClick} style={coverpage}></div>
+    <div class="screen blue-screen">
+    <template if:false={register}>
+        
+        <div class="container">
+    <div class="body" style={bgImageStyle}></div>
+    <div class="wrap">
+    
+    <div class="login-form">
+        <div class="form-box">
+            <!-- login-form-->
+            <div class="login-container" id="login">
+               <div class="top-">
+                   <span>Don't have an Account? <a href="#" onclick={handleRegister}>Sign Up</a></span>
+                   <header>Log In</header>
+                   </div>
+                    <div class="input-box">
+                       <lightning-input type="text" class="input-field" name="email" placeholder="email" value={email} onchange={handleInputChange}></lightning-input>
+                       <i class="bx bx-user"></i>
+                   </div>
+                   <div class="input-box">
+                       <lightning-input type="password" class="input-field" name="password" placeholder="password" value={password} onchange={handleInputChange}></lightning-input>
+                       <i class="bx bx-lock-alt"></i>
+                   </div>
+                   <div class="input-box">
+                       <input type="submit" class="submit" value="Sign In" onclick={handleLogin}>
+                       </div>
+                     
+               </div>
+    </div>
+    
+            </div>
+            
+         </div>
+        </div>
+        
+       
+    </template>
+        <template if:true={register}>
+            <c-registration onclose={handleRegister}></c-registration>
+        </template>
+    </div>
+</template>

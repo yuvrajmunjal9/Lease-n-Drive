@@ -1,0 +1,60 @@
+.container{
+    display: flex;
+
+}
+.right{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+.registration-form {
+    
+    color: rgb(78, 4, 4);
+    /* padding: 20px;
+    border-radius: 5px; */
+   
+}
+.body{
+    display: flex;
+    width: 50%;
+    justify-content: left;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+}
+/* .input-field{
+    font-size: 17px;
+    color: #fff;
+    height:50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    outline: none;
+    transition: .2s ease;
+} */
+
+button{
+    border-style: solid;
+    border-radius: 20px;
+}
+.title {
+    color: rgb(99, 5, 5);
+    text-align: center;
+    
+}
+
+.register-button {
+    background-color: rgb(55, 7, 7);
+    color: rgb(255, 255, 255);
+    padding: 3px 200px;
+}
+.toast{
+    
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+}

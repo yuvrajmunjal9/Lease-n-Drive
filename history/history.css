@@ -1,0 +1,68 @@
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow:0 2px 4px rgb(229, 18, 18);
+  display: flex;
+  overflow: hidden;
+  width: 25%;
+  margin: 10px;
+  background: #fff8f8;
+}
+.upcoming,.completed{
+  color: green;
+  font-weight: bold;
+}
+.declined{
+  color:rgb(105, 3, 3);
+  font-weight: bold;
+}
+.cancelBooking{
+  border-style:solid ;
+  border-color: red;
+  border-radius: 50px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 111px;
+  position: relative;
+  top: -29px;
+  left: 115px;
+  cursor: pointer;
+
+}
+
+.ongoing{
+  color: rgb(203, 203, 29);
+  font-weight: bold;
+}
+.booking-details {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.booking-details p {
+  margin: 8px 0;
+}
+.booking{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background: #ffffff;
+}
+c-loading{
+  display: flex;
+    justify-content: center;
+    z-index: 30;
+    position: relative;
+    z-index: 10px;
+    top: 50px;
+}
+h1{
+  font-size: 20px;
+  font-weight: bold;
+  color:rgb(255, 255, 255);
+}

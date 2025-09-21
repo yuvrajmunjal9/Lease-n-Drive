@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+  }
+  .logoimg{
+    border-radius: 50px;
+    height: 60px;
+    cursor: pointer;
+  }
+  .RightNav li {
+    color: #770d0d;
+    text-align: center;
+    padding: 14px 16px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    transition: 0.4s linear;
+  }
+  .RightNav{
+    display: flex;
+    padding: 10px 40px;
+    width: 50%;
+    
+  }
+  .LeftNav{
+    display: flex;
+    color: #931616;
+    font-size: 35px;
+    width: 50%;
+  }
+  
+  .RightNav li:hover {
+    background-color: #530b0b;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .RightNav li.active {
+    background-color: #680e0e;
+    color: rgb(237, 233, 233);
+    cursor: pointer;
+  }
+  

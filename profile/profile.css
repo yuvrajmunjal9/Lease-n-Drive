@@ -1,0 +1,75 @@
+h1{
+    font-size: 36px;
+}
+.container{
+    height: 640px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.rounded-circle{
+    border: 3px;
+    border-color: rgb(83, 5, 5);
+    border-style: solid;
+    border-radius: 59px;
+}
+.slds-p-around_medium{
+    display: flex;
+    height: 150px;
+    background-size: cover;
+    z-index: -9;
+    background-color: rgb(77, 5, 5);
+}
+.leftMain{
+    width: 50%;
+    padding: 35px;
+    color: rgb(81, 8, 8);
+    margin: 40px;
+    height: auto;
+    float: left;
+    /* box-shadow: 20px 20px 60px #000,
+    inset -20px -20px 60px rgba(53, 56, 8, 0.17); */
+    cursor: pointer;
+    font-size: 50px;
+}
+.rightMain{
+    width: 50%;
+    float: right;
+    color: rgb(71, 8, 8);
+    height: auto;
+    /* padding: 90px; */
+    /* margin: 40px; */
+    cursor: pointer;
+    position: relative;
+    top: -300px;
+}
+.a1{
+    position: relative;
+    left: -24%;
+    font-size: 40px;    
+}
+.a2{
+    position: relative;
+    left: -166px;
+     
+}
+.a3{
+    position: relative;
+    left: -125px;
+}
+.a4{
+    position: relative;
+    left: -22px;
+}
+.a5{
+    position: relative;
+     
+}
+.a6{
+    position: relative;
+     
+}
+.a7{
+    position: relative;
+     
+}

@@ -1,0 +1,31 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    width: 100%;
+    background-color: rgba(255, 255, 255,0.9); /* Light background with transparency */
+}
+
+.loader {
+    position: relative;
+    width: 100px;  /* Adjust size as needed */
+    height: 100px;
+}
+
+.car-logo {
+    width: 100%;  /* Adjust size as needed */
+    animation: moveCar 3s infinite;
+}
+
+@keyframes moveCar {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

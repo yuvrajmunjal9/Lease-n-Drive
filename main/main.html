@@ -1,0 +1,32 @@
+<template> 
+    
+
+    <template if:true={login}>
+        <br><br><br>
+         <c-login onloggedin={handleLoginData}></c-login>
+    </template>
+    <template if:false={login}>
+        <c-sticky-navbar onpage={switchPage}></c-sticky-navbar>
+    <br><br>
+
+
+
+    <template  if:true={activePg.profile}>
+        <c-profile customer={customer}></c-profile>
+        <br>
+    </template>
+    <template if:true={activePg.home}>
+        <br>
+        <c-home role={customer.Role__c} user-name={customer.Email__c}></c-home>
+    </template>
+    <template if:true={activePg.history} >
+        <br>
+        <c-history user-name={customer.Email__c}  role={customer.Role__c}></c-history>
+        <br>
+    </template>
+    
+
+    <c-footer></c-footer>
+</template>
+<c-toast-message></c-toast-message>
+</template>

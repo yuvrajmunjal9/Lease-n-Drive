@@ -1,0 +1,67 @@
+.vehicle-card {
+    background-color: white;
+    border: 1px solid #1E90FF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(55, 169, 249);
+    padding: 10px;
+    margin: 20px 0 0 20px;
+    max-width: 400px;
+    font-family: math;
+}
+
+.Heading{
+    color: white;
+    background-color: #1E90FF;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.vehicle-details {
+    margin-bottom: 30px;
+}
+
+.vehicle-title {
+    color: #1E90FF;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.approve-button,
+.reject-button {
+    
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.approve-button
+{
+    background-color: green;
+    box-shadow: 0 2px 4px rgb(36, 79, 3);
+}
+.approve-button:hover{
+    background-color: lightgreen;
+    box-shadow: 0 4px 8px 0 rgb(40, 195, 2), 0 6px 20px 0 rgb(5, 186, 38);
+    border: 1px solid rgb(9, 136, 0);
+    transform:scale(1px) ;
+}
+
+.reject-button{
+    background-color: red;
+    box-shadow: 0 2px 4px rgb(79, 14, 3);
+}
+.reject-button:hover{
+    background-color: lightcoral;
+    box-shadow: 0 4px 8px 0 rgb(249, 39, 39), 0 6px 20px 0 rgb(173, 14, 3);
+    border: 1px solid rgb(255, 0, 0);
+    transform:scale(1px) ;
+}

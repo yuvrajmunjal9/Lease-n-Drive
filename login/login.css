@@ -1,0 +1,245 @@
+
+*{
+  
+    box-sizing: border-box;
+    color: rgb(107, 2, 2);
+    font-family: 'poppins', sans-serif;
+}
+.container{
+    display: flex;
+}
+.body{
+   display: flex;
+   width: 50%;
+   justify-content: left;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    /* background-position: center; */
+    background-size: contain;
+}
+.wrap{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+    /* align-items: center; */
+    min-height: 79vh;
+}
+
+.btn.ht-btn{
+    background: rgba(172, 37, 206, 0.300);
+}
+.btn:hover{
+    background: rgba(172, 37, 206, 0.171);
+}
+.btn.btn.bt-btn:hover{
+    background: rgba(172, 37, 206, 0.290);
+}
+
+/* registration form */
+ .form-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 490px;
+    height: 325px;
+    overflow: hidden;
+    z-index: 2;
+ }
+ .login-container{
+    position: absolute;
+    left: 5px;
+    width: 480px;
+    display: flex;
+    flex-direction:column;
+    transition: .5s ease-in-out;
+}
+
+.top span{
+    color: #450505;
+    font-size: small;
+    padding:10px 0;
+    display: flex;
+    justify-content: center;
+
+}
+.top span a{
+font-weight: 500;
+color: #bc0909;
+margin-left: 5px;
+}
+header{
+    color: #be0d0d;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+ .two-forms{
+    display: flex;
+    gap: 11px;
+}
+.input-field{
+    font-size: 17px;
+    color: #b40d0d;
+    height:50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    outline: none;
+    transition: .2s ease;
+}
+
+::-webkit-input-placeholder{
+color: #b10d0d;
+}
+
+.input-box i{
+    position: relative;
+    top: -30px;
+    left: 18px;
+    color: #c70202;
+}
+
+.submit{
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    width: 22%;
+    border: none;
+    margin: 0px 126px;
+    border-radius: 30px;
+    outline: none;
+    background: rgb(75, 2, 2);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.submit:hover{
+    background:rgba(50, 3, 3, 0.664);
+    box-shadow: 1px 5px 8px 1px rgba(169, 151, 151, 0.918);
+}
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: #460404;
+    font-size: small;
+    margin-top: 11px;
+}
+
+.two-col .one{
+    display: flex;
+    gap: 5px;
+} 
+.two label a{
+    text-decoration: none;
+    color: #fff;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 786px){
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.respomsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position:absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(172, 37, 206, 0.171);
+        width: 100%;
+        height: 72vh;
+        backdrop-filter: blur(19px);
+        transition: .5s;
+    }
+.nav-menu-ul{
+    flex-direction: column;
+    text-align: center;
+}
+.nav-menu-btn{
+    display: block;
+}
+.nav-menu-btn i{
+    font-size: 25px;
+    color: #fff;
+    padding: 10px;
+    background: rgba(172, 37, 206, 0.171);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+}
+.nav-menu-btn i:hover{
+    background: rgba(172, 37, 206, 0.290);
+}
+
+}
+
+@media only screen and (max-width: 540px){
+    .wrapper{
+        min-height: 100vh;
+    }
+    .form-box{
+        width: 100%;
+        height: 500px;
+ }
+ .register-container, .login-container{
+
+    width: 100%;
+    padding: 0 20px;
+ }
+ .register-container .two-forms{
+    flex-direction:column;
+    gap: 0;
+}
+}
+.email-error{
+    position: absolute;
+    left: 2px;
+    font-size: 15px;
+    font-weight: 400;
+    color: red;
+}
+c-loading{
+    display: flex;
+      justify-content: center;
+      z-index: 30;
+      position: relative;
+      z-index: 10px;
+      top: 50px;
+  }
+  :host {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.brown-screen {
+    /* background-image: url({brownPhotoUrl}); Reference to the static resource */
+    /* background-color: aqua; */
+    background-size: cover;
+    
+    z-index: 9;
+}
+
+.blue-screen {
+    /* background-image: url({bluePhotoUrl}); Reference to the static resource */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.hidden {
+    transform: translateY(-100%);
+}

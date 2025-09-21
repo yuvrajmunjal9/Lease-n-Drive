@@ -1,0 +1,60 @@
+<template>
+  <c-toast-message></c-toast-message>
+  <template if:true={isrenter}>
+        <div class="booking" if:true={bookingsDetails}>
+          <h1>Your Booking History:</h1>
+      <template for:each={bookingsDetails} for:item="booking" >
+        <div key={booking.number__c} class="card">
+          <div class="booking-details">
+            <p><b><strong>Booking Number:</strong> {booking.Name}</b></p>
+              <p><strong>Car Number:</strong>
+               <a name={booking.vehicle__r.number__c} onclick={giveRating}>{booking.vehicle__r.number__c}</a></p>
+            <p><strong>To date:</strong> {booking.toDate__c}</p>
+            <p><strong>From Date:</strong> {booking.fromdate__c}</p>
+            <p><strong>Price(per day):</strong> {booking.vehicle__r.price__c}</p>
+            <p><strong>Model:</strong>{booking.vehicle__r.model__c}</p>
+            <p><strong>colour:</strong>{booking.vehicle__r.color__c}</p>
+            <div>
+          <strong class={booking.status__c}>{booking.status__c}</strong></div>
+          <template if:true={booking.isCancellabe__c}>
+          <div  title="Delete" data-id={booking.Name} onclick={openModel} class="cancelBooking">X</div>
+        </template>
+          </div>
+        </div>
+      </template>
+    </div></template>
+    <template if:false={isrenter}>
+      <div class="booking" if:true={bookingsDetails}>
+        <h1>Your Booking History:</h1>
+    <template for:each={bookingsDetails} for:item="booking" >
+      <div key={booking.number__c} class="card">
+        <div class="booking-details">
+          <p><b><strong>Booking Number:</strong> {booking.Name}</b></p>
+            <p><strong>Car Number:</strong>
+             {booking.vehicle__r.number__c}</p>
+          <p><strong>To date:</strong> {booking.toDate__c}</p>
+          <p><strong>From Date:</strong> {booking.fromdate__c}</p>
+          <p><strong>Price(per day):</strong> {booking.vehicle__r.price__c}</p>
+          <p><strong>Model:</strong>{booking.vehicle__r.model__c}</p>
+          <p><strong>colour:</strong>{booking.vehicle__r.color__c}</p>
+          <div>
+        <strong class={booking.status__c}>{booking.status__c}</strong></div>
+        <template if:true={booking.isCancellabe__c}>
+        <div  title="Delete" data-id={booking.Name} onclick={openModel} class="cancelBooking">X</div>
+      </template>
+        </div>
+      </div>
+    </template>
+  </div>
+    </template>
+    <template if:true={isModelOpen}>
+        <c-model title={title} message={message} oncancel={closeModel} onsave={saveModel}></c-model>
+    </template>
+    <template if:true={isRating}>
+      <c-rating vehicle-number={vehicleNumber} oncancel={closeModel} ></c-rating>
+  </template>
+    <template if:true={spinner}>
+      <c-loading></c-loading>
+    </template>
+  </template>
+  

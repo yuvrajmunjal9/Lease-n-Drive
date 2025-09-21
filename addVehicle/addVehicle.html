@@ -1,0 +1,47 @@
+<template>
+    <template if:true={spinner}>
+        <c-loading></c-loading>
+      </template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleCancel}>
+        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true" >
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+        </svg>
+        <span class="slds-assistive-text" >Cancel and close</span>
+        </button>
+        <div class="slds-modal__header">
+        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1">Add New Vehicle</h1>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium message-content"  id="modal-content-id-1">
+            <label>Vehicle Number</label>
+            <input type="text" name="number__c"  class="slds-input" placeholder="Enter Vehicle Number" onchange={handleInputChange} required/>
+            <label>Model</label>
+             <input type="text" name="model__c"  class="slds-input" placeholder="Enter Model" onchange={handleInputChange} required/>
+            <label>Color</label>
+             <input type="text" name="color__c"  class="slds-input" placeholder="Enter Color" onchange={handleInputChange} required/>
+           <label>Type</label>
+           <input type="text" name="type__c"  class="slds-input" placeholder="Enter Type" onchange={handleInputChange} required/>
+            <label>Address</label>
+            <input type="text" name="address__c"  class="slds-input" placeholder="Enter Address" onchange={handleInputChange} required/>
+            <label>Price per day</label>
+            <input type="text" name="price__c" class="slds-input" placeholder="Enter Price" onchange={handleInputChange} required/>
+            <label>Vehicle Documents</label>
+            <lightning-input type="file" label="Upload Document" 
+                    accept=".jpg,.jpeg,.png,.pdf" 
+                    onchange={handleDocumentChange} required>
+    </lightning-input>
+            <label>Vehicle Photo</label>
+            <lightning-input type="file" label="Upload Photo" 
+                    accept=".jpg,.jpeg,.png" 
+                    onchange={handlePhotoChange} required>
+    </lightning-input>
+        </div>
+        <div class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>
